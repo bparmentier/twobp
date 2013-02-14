@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+        <title>The World Of BP</title>
+    </head>
+
+    <body id="archlinux">
+        <div id="main_wrapper">
+            <header>
+                <div id="main_title">
+                    <h1>TWOBP</h1>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="index.html" id="nav-home">Home</a></li><!--
+                        --><li><a href="android.html" id="nav-android">Android</a></li><!--
+                        --><li><a href="archlinux.html" id="nav-archlinux">Arch Linux</a></li><!--
+                        --><li><a href="web.html" id="nav-web">Web</a></li><!--
+                        --><li><a href="projects.html" id="nav-projects">Projects</a></li><!--
+                        --><li><a href="cv.html" id="nav-cv">CV</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <section>
+                <article>
+                    <h1>Optimize SSD Performance</h1>
+                    <p>See: <a href="https://wiki.archlinux.org/index.php/Solid_State_Drives">https://wiki.archlinux.org/index.php/Solid_State_Drives</a>
+                    <h2>Enable TRIM</h2>
+                    <p><strong>Warning</strong>: the following tip only works for Linux kernel version 2.6.33 or above, and not all filesystems are supported (as of version 3.7, ext4, btrfs, JFS and XFS support it).</p>
+                    <p>Add the <code>discard</code> option in <code>/etc/fstab</code>.</p>
+                    <p>Example:</p>
+                    <pre><code>/dev/sda1  /       ext4   defaults,noatime,<em>discard</em>   0  1<br />/dev/sda2  /home   ext4   defaults,noatime,<em>discard</em>   0  2</code></pre>
+                    <h1>i3: add a field for your usb-tether profile</h1>
+                    <p>Add the following lines in your <code>~/.i3status.conf</code>:</p>
+                    <pre><code>ethernet usb0 {<br />        format_up = &quot;U: %ip&quot;<br />        format_down = &quot;U: down&quot;<br />}</code></pre>
+                    <p>And:</p>
+                    <pre><code>order += &quot;ethernet usb0&quot;</code></pre>
+                    <p>Restart i3 with <kbd><kbd>$MOD</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd></kbd> (preserves your layout/session).</p>
+
+                    <h1>Use Netcfg to configure Android USB Tethering</h1>
+                    <p>Create a file named <code>usb-tether</code> in <code>/etc/network.d/</code> and add a static ethernet configuration :</p>
+                    <pre><code>CONNECTION='ethernet'<br />DESCRIPTION='A basic dhcp ethernet connection using iproute'<br />INTERFACE='usb0'<br />IP='dhcp'</code></pre>
+                    <p>Connect to the profile with the following command:</p>
+                    <pre><kbd># netcfg up usb-tether</kbd></pre>
+
+                    <h1>Firefox: add "magnet:" protocol support</h1>
+                    <p>Open a new tab and type <kbd>about:config</kbd></p>
+                    <p>Right-click &rarr; New &rarr; Boolean &rarr; Name: network.protocol-handler.expose.magnet &rarr; Value &rarr; false</p>
+                    <p>Next time you use the magnet protocol, it will give you the "associate application" box.</p>
+                    <p>Point it to the magnet2torrent script below if you want to associate it with rtorrent.</p>
+
+                    <h1>rtorrent: handling "magnet:" URIs via a bash script</h1>
+                    <p>See: <a href="http://wiki.rtorrent.org/MagnetUri">http://wiki.rtorrentorg/MagnetUri</a></p>
+                    <p>Create a <code>magnet2torrent</code> script with the following code:</p>
+                    <pre><code>#! /bin/bash<br /><br /># Convert a magnet URI into a .torrent file<br /># Run the script with:<br /># ./magnet2torrent.sh &quot;MAGNET_URI&quot;<br /># (Don't forget the quotes aroud MAGNET_URI)<br /><br />cd ~/watch || exit    # set your watch directory here<br />[[ &quot;$1&quot; =~ xt=urn:btih:([^&amp;/]+) ]] || exit<br />hashh=${BASH_REMATCH[1]}<br />if [[ &quot;$1&quot; =~ dn=([^&amp;/]+) ]];then<br />    filename=${BASH_REMATCH[1]}<br />else<br />    filename=$hashh<br />fi<br />echo &quot;d10:magnet-uri${#1}:${1}e&quot; &gt; &quot;meta-$filename.torrent&quot;</code></pre>
+                    <p>Make the script executable:</p>
+                    <pre><kbd>$ chmod a+x magnet2torrent</kbd></pre>
+                    <p>Run the script with a magnet URI (after adding it to your $PATH variable):</p>
+                    <pre><kbd>$ magnet2torrent "MAGNET_URI"</code></pre>
+
+                    <h1>Connect to Raspberry Pi via VNC</h1>
+                    <h2>Server side (Raspberry Pi running Raspbian)</h2>
+                    <p>Install tightvnc:</p>
+                    <pre><kbd>$ sudo apt-get install tightvncserver</kbd></pre>
+                    <p>Launch tightvnc with:</p>
+                    <pre><kbd>$ tightvncserver</kbd></pre>
+                    <p>It will ask you for a password and then show something like this:</p>
+                    <pre><code>New 'X' desktop is raspberrypi:1<br /><br />Starting applications specified in /home/pi/.vnc/xstartup<br />Log file is /home/pi/.vnc/raspberrypi:1.log</code></pre>
+                    <p>Note the <code>raspberrypi:1</code>.</p>
+                    <h2>Client side (my laptop running Arch Linux)</h2>
+                    <p>Install tightvnc:</p>
+                    <pre><kbd># pacman -S tightvnc</kbd></pre>
+                    <p>Connect to your Raspberry Pi with (adapt your ip address):</p>
+                    <pre><kbd>$ vncviewer 192.168.1.4:1</kbd></pre>
+
+                    <h1>Vim: convert highlights of the current syntax to HTML</h1>
+                    <p>Execute:</p>
+                    <pre><kbd>:runtime! syntax/2html.vim</kbd></pre>
+                    <p>This will output a colored .html file</p>
+
+                    <h1>Recursive chmod only files/directories</h1>
+                    <p>Only files:</p>
+                    <pre><kbd>$ find . -type f -exec chmod 644 {} \;</kbd></pre>
+                    <p>Only directories:</p>
+                    <pre><kbd>$ find . -type d -exec chmod 755 {} \;</kbd></pre>
+                    <p>Note: adapt the command to your wishes</p>
+
+                    <h1>Override an alias set in <code>.bashrc</code></h1>
+                    <p>Add a <kbd>\</kbd> (backslash) before the command to disable the alias.</p>
+                    <p>Example:</p>
+                    <pre><kbbd>$ \ls</kbd></pre>
+                    
+                    <h1>Open programs with the terminal without being stuck to the terminal</h1>
+                    <p>Lauch the command with &amp; at the end (backgroud).</p>
+                    <p>Example:</p>
+                    <pre><kbd>$ firefox &amp;</kbd></pre>
+
+                    <h1>Wi-Fi connection frequently drops</h1>
+                    <p>Create a <code>iwlwifi.conf</code>file in <code>/etc/modprobe.d/</code></p>
+                    <p>containing the following line:</p>
+                    <pre><code>options iwlwifi 11n_disable=1 swcrypto=1</code></pre>
+
+                    <h1>Configure pacman</h1>
+                    <h2>Auto-completion</h2>
+                    <p>For advanced completion, install the bash-completio packagen:</p>
+                    <pre><code># pacman -S bash-completion</code></pre>
+                    <h2>The "command not found" hook</h2>
+                    <p>Install pkgfile:</p>
+                    <pre><code># pacman -S pkgfile</code></pre>
+                    <p>Then update the database with:</p>
+                    <pre><code># pkgfile --update</code></pre>
+                    <p>Note: doesn't work for me.</p>
+                    <h2>Add color output</h2>
+                    <p>Install pacman-color from AUR.</p>
+                    <p>Backup the original pacman executable:</p>
+                    <pre><code># mv /usr/bin/pacman /usr/bin/pacman.bak</code></pre>
+                    <p>Make a symlink from <code>pacman</code> to <code>pacman-color</code>:</p>
+                    <pre><kbd># ln -s /usr/bin/pacman-color /usr/bin/pacman</kbd></pre>
+
+                    <h1>Syslinux: change bootup resolution</h1>
+                    <p>To know which resolutions are supported by your screen, install hwinfo:</p>
+                    <pre><code># pacman -S hwinfo</code></pre>
+                    <p>Then execute:</p>
+                    <pre><code># hwinfo --vbe | grep 'Mode '</code></pre>
+                    <p>Modes are displayed in hexadecimal.</p>
+                    <p>Now edit <code>/boot/syslinux/syslinuc.cfg</code> and add to the <code>APPEND</code> line the desired resolution with:</p>
+                    <pre><code>vga=&lt;resolution&gt;</code></pre>
+                    <p>where &lt;resolution&gt; is the corresponding hexa code.</p>
+                    <p>For example: add <code>vga=0x037f</code> if you want 1920x1080x24.</p>
+
+                    <h1>Configure i3bar and VPN pid</h1>
+                    <p>In this case, I use the privatvpn script, which install the OpenVPN client.</p>
+                    <p>Replace the command line in <code>/usr/bin/privatvpn</code> with:</p>
+                    <pre><code>/usr/sbin/openvpn --config /etc/openvpn/privatvpn.conf --writepid /var/run/openvpn.pid</code></pre>
+                    <p>Then point the .pid file in <code>~/.i3status.conf</code>, in <code>run_watch VPN</code>:</p>
+                    <pre><code>pidfile = "/var/run/openvpn.pid"</code></pre>
+
+                    <h1>Configure NTP</h1>
+                    <p>Install ntp:</p>
+                    <pre><code># pacman -S ntp</code></pre>
+                    <p>Add the following lines in <code>/etc/ntp.conf</code>:</p>
+                    <pre><code>server 0.be.pool.ntp.org iburst<br />server 1.be.pool.ntp.org iburst<br />server 2.be.pool.ntp.org iburst<br />server 3.be.pool.ntp.org iburst</code></pre>
+                    <p>Enable ntpd at startup:</p>
+                    <pre><code># systemctl enable ntpd</code></pre>
+
+                    <h1>Properly remove DHCP lease file upon disconnection</h1>
+                    <p>Add the following line to <code>/etc/profile</code>:</p>
+                    <pre><code>PRE_UP=' [ -e /var/lib/dhcpcd/dhcpcd-wlan0.lease ] &amp;&amp; rm /var/lib/dhcpcd/dhcpcd-wlan0.lease '</code></pre>
+
+                    <h1>Configure Virtualbox</h1>
+                    <p>Install it with:</p>
+                    <pre><kbd># pacman -S virtualbox qt</kbd></pre>
+                    <p>Add user bp to the <code>vboxusers</code> group:</p>
+                    <pre><kbd># gpasswd -a bp vboxusers</kbd></pre>
+                    <p>Load kernel module at boot:</p>
+                    <pre><kbd># tee /etc/modules-load.d/virtualbox.conf &lt;&lt;&lt; "vboxdrv"</kbd></pre>
+
+                    <h1>Configure sudo</h1>
+                    <p>Install with:</p>
+                    <pre><kbd># pacman -S sudo</kbd></pre>
+                    <h2>Allow user <code>bp</code> to use sudo</h2>
+                    <p>Add the following line in section <code>"User privilege specification</code>:</p>
+                    <pre><code>bp ALL=(ALL) ALL</code></pre>
+                    <h2>Use Vim as default editor for visudo</h2>
+                    <p>Add the following lines to <code>/etc/sudoers</code>:</p>
+                    <pre><code># Reset environment by default<br />Defaults      env_reset<br /># Set default EDITOR to vim, and do not allow visudo to use EDITOR/VISUAL.<br />Defaults      editor="/usr/bin/vim -p -X", !env_editor</code></pre>
+
+                    <h1>Use feh as a desktop wallpaper manager</h1>
+                    <pre><kbd>$ feh --bg-max image.png</kbd></pre>
+                    <p>This creates a <code>.fehbg</code> file in <code>$HOME</code>.</p>
+                    <p>To restore the background on the next session, add the following line to the startup file (<code>~/.xinitrc</code>):</p>
+                    <pre><code>sh ~/.fehbg &amp;</code></pre>
+
+                    <h1>Configure XTerm colors/font</h1>
+                    <p>Create a <code>.Xresources</code> file in your <code>$HOME</code> and add the following lines:</p>
+                    <pre><code>XTerm*background: #111111<br />XTerm*foreground: gray90<br />XTerm*faceName: terminus10</code></pre>
+
+                    <h1>Configure i3</h1>
+                    <p>Install dmenu to use <kbd><kbd>$mod</kbd> + <kbd>D</kbd></kbd> (dmenu):</p>
+                    <pre><kbd># pacman -S dmenu</kbd></pre>
+
+                    <h1>Configure SLiM</h1>
+                    <p>Edit <code>/etc/slim.conf</code>.</p>
+
+                    <h1>Mount an USB external hard drive disk (/dev/sdb1)</h1>
+                    <pre><kbd># mkdir /media/USBdisk<br /># mount /dev/sdb1 /media/USBdisk</kbd></pre>
+                    
+                    <h1>Disable system beep (by blacklisting pcspkr module)</h1>
+                    <p>Create a <code>nobeep.conf</code> file in <code>/etc/modprobe.d/</code> and add the following line (one per module):</p>
+                    <pre><code>blacklist pcspkr</code></pre>
+
+                    <h1>Belgian keyboard in X11</h1>
+                    <p>Create a <code>10-keyboard.conf</code> file in <code>/etc/X11/xorg.conf.d/</code> and add the following lines:</p>
+                    <pre><code>Section "InputClass"<br />    Identifier          "Keyboard Defaults"<br />    MatchIsKeyboard     "yes"<br />    Option              "XkbLayout" "be(azerty)"<br />EndSection</code></pre>
+                </article>
+
+                <aside>
+                    <h1>Useful links</h1>
+                    <ul>
+                        <li><a href="https://wiki.archlinux.org/">ArchWiki</a></li>
+                        <li><a href="http://www.site2.com">Site2</a></li>
+                    </ul>
+                </aside>
+            </section>
+
+            <footer>
+                <p><!--[if lte IE 8]><span style="filter: FlipH; -ms-filter: "FlipH"; display: inline-block;"><![endif]-->
+                    <span style="-moz-transform: scaleX(-1); -o-transform: scaleX(-1); -webkit-transform: scaleX(-1); transform: scaleX(-1); display: inline-block;">
+                        &copy;
+                    </span>
+                    <!--[if lte IE 8]></span><![endif]-->
+                Bruno Parmentier. All wrongs reserved.</p>
+            </footer>
+        </div>
+    </body>
+</html>

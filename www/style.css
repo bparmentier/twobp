@@ -1,0 +1,172 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'OpenSansRegular';
+    src: url('fonts/open-sans/OpenSans-Regular-webfont.eot');
+    src: url('fonts/open-sans/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/open-sans/OpenSans-Regular-webfont.woff') format('woff'),
+         url('fonts/open-sans/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('fonts/open-sans/OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSansBold';
+    src: url('fonts/open-sans/OpenSans-Bold-webfont.eot');
+    src: url('fonts/open-sans/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/open-sans/OpenSans-Bold-webfont.woff') format('woff'),
+         url('fonts/open-sans/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('fonts/open-sans/OpenSans-Bold-webfont.svg#OpenSansBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Main */
+
+body {
+    background-color: #f8f8f8;
+    font-family: "OpenSansRegular", "Trebuchet MS", Arial, sans-serif;
+    color: #181818;
+}
+
+#main_wrapper {
+    width: 90%;
+    min-width: 700px;
+    max-width: 1000px;
+    margin: auto;
+    background-color: #e8e8e8;
+    box-shadow: 3px 3px 6px grey;
+}
+
+/* Header */
+
+header {
+    background-color: #383838;
+    padding-left: 20px;
+}
+
+#main_title {
+    color: #d8d8d8;
+}
+
+/* Navigation bar */
+
+nav {
+    background-color: #383838;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0 0;
+    padding: 0 0 0 0;
+    height: 40px;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 0;
+}
+
+nav li a, nav li a:visited {
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+    padding: 0 15px;
+    line-height: 40px;
+    color: #e8e8e8;
+    outline: 0;
+}
+
+nav li a:hover, #home #nav-home, #android #nav-android, #archlinux #nav-archlinux, #web #nav-web, #projects #nav-projects, #cv #nav-cv {
+    background-color: #e8e8e8;
+    color: #383838;
+}
+
+/* Section */
+
+section {
+    padding: 20px;
+}
+
+article h1, article h2, article h3, article h4, article h5, article h6 {
+    font-family: "OpenSansBold", "Trebuchet MS Bold", "Arial Bold", sans-serif;
+}
+
+article h1 {
+    font-size: 1.3em;
+}
+
+article h2 {
+    font-size: 1.1em;
+    font-weight: normal;
+}
+
+article p {
+    text-align: justify;
+}
+
+article, aside {
+    display: inline-block;
+    vertical-align: top;
+}
+
+article {
+    width: 70%;
+    margin-right: 20px;
+}
+
+aside {
+    min-width: 140px;
+    width: 23%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #989898;
+    text-align: right;
+    box-shadow: 3px 3px 6px grey inset;
+}
+
+aside ul {
+    list-style-type: none;
+}
+
+/* Footer */
+
+footer {
+    border-top: 1px solid #383838 ;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+}
+
+/* Various */
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0033ff;
+    text-decoration: none;
+}
+
+pre {
+    border: 1px solid #c8c8c8;
+    background-color: #d8d8d8;
+    padding: 4px;
+    overflow: auto;
+}
+
+/* Mobile devices */
+/*
+#main_wrapper {
+    width: 100%;
+    background-color: #e8e8e8;
+    box-shadow: 0 0 0;
+}
+
+aside {
+    margin: 0;
+    box-shadow: none;
+}
+*/

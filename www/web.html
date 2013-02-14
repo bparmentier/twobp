@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+        <title>The World Of BP</title>
+    </head>
+
+    <body id="web">
+        <div id="main_wrapper">
+            <header>
+                <div id="main_title">
+                    <h1>TWOBP</h1>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="index.html" id="nav-home">Home</a></li><!--
+                        --><li><a href="android.html" id="nav-android">Android</a></li><!--
+                        --><li><a href="archlinux.html" id="nav-archlinux">Arch Linux</a></li><!--
+                        --><li><a href="web.html" id="nav-web">Web</a></li><!--
+                        --><li><a href="projects.html" id="nav-projects">Projects</a></li><!--
+                        --><li><a href="cv.html" id="nav-cv">CV</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <section>
+                <article>
+                    <h1>Removing the space between two inline-block elements</h1>
+                    <p><a href="http://css-tricks.com/fighting-the-space-between-inline-block-elements">Source</a></p>
+                    <p>Using <code>display: inline-block</code> in your CSS file will leave a space between your elements.<br />
+                    Here is a trick to avoid this:</p>
+                    <pre><code>&lt;nav&gt;<br />    &lt;ul&gt;<br />        &lt;li&gt;&lt;a href="#"&gt;Page1&lt;/a&gt;&lt;/li&gt;&lt;!--<br />     --&gt;&lt;li&gt;&lt;a href="#"&gt;Page2&lt;/a&gt;&lt;/li&gt;&lt;!--<br />     --&gt;&lt;li&gt;&lt;a href="#"&gt;Page3&lt;/a&gt;&lt;/li&gt;&lt;!--<br />     --&gt;&lt;li&gt;&lt;a href="#"&gt;Page4&lt;/a&gt;&lt;/li&gt;<br />    &lt;/ul&gt;<br />&lt;/nav&gt;</code></pre>
+                    <p>We add a blank comment between <code>&lt;/li&gt;</code> and <code>&lt;li&gt;</code> to "fill" the space.</p>
+                </article>
+
+                <aside>
+                    <h1>Useful links</h1>
+                    <ul>
+                        <li><a href="http://www.w3schools.com/">w3schools.com</a></li>
+                        <li><a href="http://www.site2.com">Site2</a></li>
+                    </ul>
+                </aside>
+            </section>
+
+            <footer>
+                <p><!--[if lte IE 8]><span style="filter: FlipH; -ms-filter: "FlipH"; display: inline-block;"><![endif]-->
+                    <span style="-moz-transform: scaleX(-1); -o-transform: scaleX(-1); -webkit-transform: scaleX(-1); transform: scaleX(-1); display: inline-block;">
+                        &copy;
+                    </span>
+                    <!--[if lte IE 8]></span><![endif]-->
+                Bruno Parmentier. All wrongs reserved.</p>
+            </footer>
+        </div>
+    </body>
+</html>
