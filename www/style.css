@@ -127,7 +127,9 @@ aside {
 }
 
 aside ul {
-    list-style-type: none;
+    text-align: left;
+    margin-left: 20px;
+    padding: 0;
 }
 
 /* Footer */
