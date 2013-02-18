@@ -78,7 +78,7 @@ nav li a, nav li a:visited {
     outline: 0;
 }
 
-nav li a:hover, #home #nav-home, #android #nav-android, #archlinux #nav-archlinux, #web #nav-web, #projects #nav-projects, #cv #nav-cv {
+nav li a:hover, #home #nav-home, #android #nav-android, #archlinux #nav-archlinux, #web #nav-web, #projects #nav-projects, #contact #nav-contact {
     background-color: #e8e8e8;
     color: #383838;
 }
