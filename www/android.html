@@ -27,6 +27,23 @@
 
             <section>
                 <article>
+                    <h1>ConnectBot: Authenticate with a SSH key</h1>
+                    <p>First, make sure openssh-server is installed on the machine you want to connect<p>
+                    <h2>Generate the key</h2>
+                    <p>Launch ConnectBot, hit the <kbd>Menu</kbd> key and select <kbd>Manage Pubkeys</kbd>.<br />
+                    Hit <kbd><kbd>Menu</kbd> &rarr; <kbd>Generate</kbd></kbd>.</p>
+                    <p>Give your key a nickname.</p>
+                    <p>Then choose encryption type. Default RSA 1024 bits should be good enough.</p>
+                    <p>You now have the choice to set a password or not. You can leave it blank, but you have to know that a SSH key without password is like a bank card without PIN code; if anyone gains access to your phone or at least to your private key, he would be able to connect to every server where your public key is installed.</p>
+                    <p>Check <kbd>Load key on start</kbd> if you want.</p>
+                    <p>Press <kbd>Generate</kbd> and move your finger around the box to gather randomness.</p>
+                    <h2>Add your key on the server</h2>
+                    <p>Your key is now created.<br />
+                    Long press on its name and choose <kbd>Copy public key</kbd>.<br />
+                    Log in to the server (with your password) and type the following command:</p>
+                    <pre><kbd>echo &quot;<em>your public key</em>&quot; &gt;&gt; .ssh/authorized_keys</kbd></pre>
+                    <p>To paste your key using ConnectBot, tap on <kbd><kbd>Menu</kbd> &rarr; <kbd>Paste</kbd></kbd>. Don't forget the quotes.<br />
+
                     <h1>CM10.1: Access the Developer Mode menu</h1>
                     <p>Developer Mode is hidden by default in CyanogenMod 10.1.<br />
                     To activate it, go in <kbd>Settings</kbd> &rarr; <kbd>About phone</kbd> and tap six times on <kbd>Build number</kbd>.</p>
