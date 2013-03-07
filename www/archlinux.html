@@ -27,6 +27,14 @@
 
             <section>
                 <article>
+                    <h1>Vim: export document to PDF</h1>
+                    <p>If you want your syntax highlight to be exported, don't forget to activate it with:</p>
+                    <pre><kbd>:syntax on</kbd></pre>
+                    <p>Now print your document to PostScript:</p>
+                    <pre><kbd>:hardcopy &gt; mydocument.ps</kbd></pre>
+                    <p>Exit Vim and use ps2pdf to convert <code>mydocument.ps</code> to <code>mydocument.pdf</code>.</p>
+                    <pre><kbd>$ ps2pdf mydocument.ps</kbd></pre>
+
                     <h1>Optimize SSD Performance</h1>
                     <p>See: <a href="https://wiki.archlinux.org/index.php/Solid_State_Drives">https://wiki.archlinux.org/index.php/Solid_State_Drives</a>
                     <h2>Enable TRIM</h2>
@@ -34,6 +42,7 @@
                     <p>Add the <code>discard</code> option in <code>/etc/fstab</code>.</p>
                     <p>Example:</p>
                     <pre><code>/dev/sda1  /       ext4   defaults,noatime,<em>discard</em>   0  1<br />/dev/sda2  /home   ext4   defaults,noatime,<em>discard</em>   0  2</code></pre>
+                    
                     <h1>i3: add a field for your usb-tether profile</h1>
                     <p>Add the following lines in your <code>~/.i3status.conf</code>:</p>
                     <pre><code>ethernet usb0 {<br />        format_up = &quot;U: %ip&quot;<br />        format_down = &quot;U: down&quot;<br />}</code></pre>
