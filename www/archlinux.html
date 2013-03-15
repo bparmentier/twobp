@@ -27,6 +27,24 @@
 
             <section>
                 <article>
+                    <h1>Arduino Uno installation</h1>
+                    <p>First install the <code>arduino</code> package from the AUR:</p>
+                    <pre><kbd>$ sudo yaourt -S arduino</kbd></pre>
+                    <p>Add yourself to the <code>uucp</code> group:</p>
+                    <pre><kbd>$ sudo gpasswd -a &lt;user&gt; uucp</kbd></pre>
+                    <p>Logout and login again.<br />
+                    Connect your arduino to your computer and lauch:</p>
+                    <pre><kbd>$ ls /dev/ttyUSB* /dev/ttyACM*</kbd></pre>
+                    <p>Note the serial port of the board.<br />
+                    Launch the <code>arduino</code> program, close it, then modify <code>~/.arduino/preferences.txt</code>.</p>
+                    <p>Change the line <code>serial.port=COM1</code> with something like this:</p>
+                    <pre><code>serial.port=/dev/ttyACM0</code></pre>
+                    <p>Lauch again the <code>arduino</code> program.</p>
+                    <p>If you can't upload your sketch (and get the following error: <em>Serial port '/dev/ttyACM0' not found. Did you select the right one from the Tools &gt; Serial Port menu?</em>), this may be because you don't have write permissions on /run/lock directory.</p>
+                    <p>The following trick should resolve the problem:</p>
+                    <pre><kbd>$ sudo cp /usr/lib/tmpfiles.d/legacy.conf /etc/tmpfiles.d/</kbd></pre>
+                    <pre><kbd>$ sudo chmod 777 /etc/tmpfiles.d/legacy.conf</kbd></pre>
+                    
                     <h1>Vim: export document to PDF</h1>
                     <p>If you want your syntax highlight to be exported, don't forget to activate it with:</p>
                     <pre><kbd>:syntax on</kbd></pre>
