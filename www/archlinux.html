@@ -42,6 +42,7 @@
                     <p>Lauch again the <code>arduino</code> program.</p>
                     <p>If you can't upload your sketch (and get the following error: <em>Serial port '/dev/ttyACM0' not found. Did you select the right one from the Tools &gt; Serial Port menu?</em>), this may be because you don't have write permissions on /run/lock directory.</p>
                     <p>The following trick should resolve the problem:</p>
+                    <pre><kbd>$ sudo chmod 777 /run/lock</kbd></pre>
                     <pre><kbd>$ sudo cp /usr/lib/tmpfiles.d/legacy.conf /etc/tmpfiles.d/</kbd></pre>
                     <pre><kbd>$ sudo chmod 777 /etc/tmpfiles.d/legacy.conf</kbd></pre>
                     
