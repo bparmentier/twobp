@@ -27,6 +27,15 @@
 
             <section>
                 <article>
+                    <h1>Multiple screens</h1>
+                    <p>So, I have a laptop with a 1920*1080 screen and I want to connect to it a 1680*1050 LCD monitor through VGA.</p>
+                    <p>First make sure xorg-xrandr is installed:</p>
+                    <pre><kbd>$ sudo pacman -S xorg-xrandr</kbd></pre>
+                    <p>Connect the monitor and run:</p>
+                    <pre><kbd>$ xrandr -q</kbd></pre>
+                    <p>Note the names of the two outputs, then run:</p>
+                    <pre><kbd>$ xrandr --output LVDS1 --pos 0x0 --mode 1920x1080 --output VGA1 --mode 1680x1050 --left-of LVDS1</kbd></pre>
+
                     <h1>Arduino Uno installation</h1>
                     <p>First install the <code>arduino</code> package from the AUR:</p>
                     <pre><kbd>$ sudo yaourt -S arduino</kbd></pre>
