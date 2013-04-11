@@ -27,6 +27,12 @@
 
             <section>
                 <article>
+                    <h1>Use webcam</h1>
+                    <p>Add yourself to the <code>video</code> group:</p>
+                    <pre><kbd># gpasswd -a &lt;user&gt; video</kbd></pre>
+                    <p>To use it with mplayer type the following command:</p>
+                    <pre><kbd>$ mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 15</kbd></pre>
+
                     <h1>Multiple screens</h1>
                     <p>So, I have a laptop with a 1920*1080 screen and I want to connect to it a 1680*1050 LCD monitor through VGA.</p>
                     <p>First make sure xorg-xrandr is installed:</p>
