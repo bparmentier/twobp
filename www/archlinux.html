@@ -27,6 +27,15 @@
 
             <section>
                 <article>
+                    <h1>i3: force specific windows as always floating</h1>
+                    <p>Sometimes you don't want i3 to open a window in tiling mode. This is generally the case for popups or preferences windows, like the one of Firefox (version 20).<br />
+                    While most of them are correctly handled by i3, some programs don't set the correct window type on those windows.</p>
+                    <p>A way to fix it is to add a rule like this in your <code>~/.i3/config</code> file:</p>
+                    <pre><code>for_window [class="Firefox" instance="Browser"] floating enable</code></pre>
+                    <p>To find out the class and instance of your window, launch <code>xprop</code> and click on it.</p>
+                    <p>This will give you the window properties.</p>
+                    <p>Look at the <code>WM_CLASS(STRING) = "Browser", "Firefox"</code></p>. The first one is the instance and the second one is the class.</p>
+
                     <h1>Configure Vimperator</h1>
                     <p>Set default search engine:</p>
                     <pre><kbd>:set defsearch=duckduckgo</kbd></pre>
