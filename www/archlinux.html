@@ -237,7 +237,7 @@
                     <pre><kbd>$ feh --bg-max image.png</kbd></pre>
                     <p>This creates a <code>.fehbg</code> file in <code>$HOME</code>.</p>
                     <p>To restore the background on the next session, add the following line to the startup file (<code>~/.xinitrc</code>):</p>
-                    <pre><code>sh ~/.fehbg &amp;</code></pre>
+                    <pre><code>eval $(cat ~/.fehbg) &amp;</code></pre>
 
                     <h1>Configure XTerm colors/font</h1>
                     <p>Create a <code>.Xresources</code> file in your <code>$HOME</code> and add the following lines:</p>
