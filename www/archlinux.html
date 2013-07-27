@@ -34,10 +34,11 @@
                     <pre><kbd>$ sudo pacman -S python2-pip</kbd></pre>
                     <p>Download <code>python-ant-downloader</code> from GitHub and install it:</p>
                     <pre><kbd>$ git clone https://github.com/braiden/python-ant-downloader.git</kbd><br /><kbd>$ cd python-ant-downloader</kbd><br /><kbd>$ sudo pip2 install .</kbd></pre>
-                    <p>Launch <code>ant-downloader</code>. The first time it should ask for pairing: answer 'yes'.</p>
-                    <p><em>Note: the program shouldn't be launched as root. I temporarily do it because I have a permission problem somewhere. I need to figure out what it is.</em></p>
-                    <pre><kbd>$ sudo ant-downloader</kbd></pre>
-                    <p>Now you can set your preferences (like your Garmin Connect login and password) in <code>~/.antd/antd.cfg</code></p>
+                    <p>To access the USB device as a normal user, add the following line to <code>/etc/udev/rules.d/99-garmin.rules</code></p>
+                    <pre><code>SUBSYSTEM=="usb", ATTR{idVendor}=="0fcf", ATTR{idProduct}=="1008", MODE="666"</code></pre>
+                    <p>Launch <code>ant-downloader</code>. The first time it should ask for pairing: answer 'yes' on your GPS device.</p>
+                    <pre><kbd>$ ant-downloader</kbd></pre>
+                    <p>Now you can set your preferences (like your Garmin Connect login and password) in <code>~/.antd/antd.cfg</code>.</p>
 
                     <h1>Switch keyboard to bépo</h1>
                     <p>I decided to learn the french bépo keyboard layout. Since I still write in azerty, I prefere not to make this new layout definitive.</p>
