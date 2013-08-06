@@ -90,7 +90,7 @@ section {
     padding: 10px;
 }
 
-article h1, article h2, article h3, article h4, article h5, article h6 {
+article h1, article h2, article h3, article h4, article h5, article h6, article time {
     font-family: "OpenSansBold", "Trebuchet MS Bold", "Arial Bold", sans-serif;
 }
 
@@ -101,6 +101,11 @@ article h1 {
 article h2 {
     font-size: 1.1em;
     font-weight: normal;
+}
+
+article time {
+    font-size: 0.9em;
+    font-variant: small-caps;
 }
 
 article p {
