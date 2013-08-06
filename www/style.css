@@ -167,6 +167,10 @@ pre {
     overflow: auto;
 }
 
+code {
+    white-space: nowrap;
+}
+
 /* Mobile devices */
 /*
 #main_wrapper {
