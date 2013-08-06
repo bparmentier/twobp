@@ -86,7 +86,8 @@ nav li a:hover, #home #nav-home, #android #nav-android, #archlinux #nav-archlinu
 /* Section */
 
 section {
-    padding: 20px;
+    width: 70%;
+    padding: 10px;
 }
 
 article h1, article h2, article h3, article h4, article h5, article h6 {
@@ -106,30 +107,29 @@ article p {
     text-align: justify;
 }
 
-article, aside {
+section, aside {
     display: inline-block;
     vertical-align: top;
 }
 
 article {
-    width: 70%;
-    margin-right: 20px;
 }
 
 aside {
-    min-width: 140px;
-    width: 23%;
-    padding: 10px;
-    margin-top: 10px;
+    width: 22%;
+    padding: 5px;
+    margin: 10px;
     background-color: #989898;
     text-align: right;
     box-shadow: 3px 3px 6px grey inset;
 }
 
+aside h1 {
+    font-size: 1.3em;
+}
+
 aside ul {
     text-align: left;
-    margin-left: 20px;
-    padding: 0;
 }
 
 /* Footer */
