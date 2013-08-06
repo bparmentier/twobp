@@ -39,12 +39,16 @@
                     <p>Launch <code>ant-downloader</code>. The first time it should ask for pairing: answer 'yes' on your GPS device.</p>
                     <pre><kbd>$ ant-downloader</kbd></pre>
                     <p>Now you can set your preferences (like your Garmin Connect login and password) in <code>~/.antd/antd.cfg</code>.</p>
+                </article>
 
+                <article>
                     <h1>Switch keyboard to bépo</h1>
                     <p>I decided to learn the french bépo keyboard layout. Since I still write in azerty, I prefere not to make this new layout definitive.</p>
                     <p>To switch to bépo in X11, type the following command:</p>
                     <pre><kbd>$ setxkbmap fr bepo</kbd></pre>
+                </article>
 
+                <article>
                     <h1>i3: force specific windows as always floating</h1>
                     <p>Sometimes you don't want i3 to open a window in tiling mode. This is generally the case for popups or preference windows, like the one in Firefox (version 20).<br />
                     While most of them are correctly handled by i3, some programs don't set the right window type on those windows.</p>
@@ -53,24 +57,32 @@
                     <p>To find out the class and instance of your window, launch <code>xprop</code> and click on it.</p>
                     <p>This will give you the window properties.</p>
                     <p>Look at the <code>WM_CLASS(STRING) = "Browser", "Firefox"</code>. The first one is the instance and the second one is the class.</p>
+                </article>
 
+                <article>
                     <h1>Configure Vimperator</h1>
                     <p>Set default search engine:</p>
                     <pre><kbd>:set defsearch=duckduckgo</kbd></pre>
+                </article>
 
+                <article>
                     <h1>Bash: useful shortcuts</h1>
                     <ul>
                         <li><kbd>Ctrl + A</kbd>: moves cursor to beginning of line of text.</li>
                         <li><kbd>Ctrl + E</kbd>: moves cursor to end of line of text.</li>
                         <li><kbd>Ctrl + L</kbd>: formfeed (clear the screen terminal).</li>
                     </ul>
+                </article>
 
+                <article>
                     <h1>Use webcam</h1>
                     <p>Add yourself to the <code>video</code> group:</p>
                     <pre><kbd># gpasswd -a &lt;user&gt; video</kbd></pre>
                     <p>To use it with mplayer type the following command:</p>
                     <pre><kbd>$ mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 15</kbd></pre>
+                </article>
 
+                <article>
                     <h1>Multiple screens</h1>
                     <p>So, I have a laptop with a 1920*1080 screen and I want to connect to it a 1680*1050 LCD monitor through VGA.</p>
                     <p>First make sure xorg-xrandr is installed:</p>
@@ -79,7 +91,9 @@
                     <pre><kbd>$ xrandr -q</kbd></pre>
                     <p>Note the names of the two outputs, then run:</p>
                     <pre><kbd>$ xrandr --output LVDS1 --pos 0x0 --mode 1920x1080 --output VGA1 --mode 1680x1050 --left-of LVDS1</kbd></pre>
+                </article>
 
+                <article>
                     <h1>Arduino Uno installation</h1>
                     <p>First install the <code>arduino</code> package from the AUR:</p>
                     <pre><kbd>$ sudo yaourt -S arduino</kbd></pre>
@@ -98,7 +112,9 @@
                     <pre><kbd>$ sudo chmod 777 /run/lock</kbd></pre>
                     <pre><kbd>$ sudo cp /usr/lib/tmpfiles.d/legacy.conf /etc/tmpfiles.d/</kbd></pre>
                     <pre><kbd>$ sudo chmod 777 /etc/tmpfiles.d/legacy.conf</kbd></pre>
-                    
+                </article>
+
+                <article>
                     <h1>Vim: export document to PDF</h1>
                     <p>If you want your syntax highlight to be exported, don't forget to activate it with:</p>
                     <pre><kbd>:syntax on</kbd></pre>
@@ -106,7 +122,9 @@
                     <pre><kbd>:hardcopy &gt; mydocument.ps</kbd></pre>
                     <p>Exit Vim and use ps2pdf to convert <code>mydocument.ps</code> to <code>mydocument.pdf</code>.</p>
                     <pre><kbd>$ ps2pdf mydocument.ps</kbd></pre>
+                </article>
 
+                <article>
                     <h1>Optimize SSD Performance</h1>
                     <p>See: <a href="https://wiki.archlinux.org/index.php/Solid_State_Drives">https://wiki.archlinux.org/index.php/Solid_State_Drives</a>
                     <h2>Enable TRIM</h2>
@@ -114,26 +132,34 @@
                     <p>Add the <code>discard</code> option in <code>/etc/fstab</code>.</p>
                     <p>Example:</p>
                     <pre><code>/dev/sda1  /       ext4   defaults,noatime,<em>discard</em>   0  1<br />/dev/sda2  /home   ext4   defaults,noatime,<em>discard</em>   0  2</code></pre>
-                    
+                </article>
+
+                <article>
                     <h1>i3: add a field for your usb-tether profile</h1>
                     <p>Add the following lines in your <code>~/.i3status.conf</code>:</p>
                     <pre><code>ethernet usb0 {<br />        format_up = &quot;U: %ip&quot;<br />        format_down = &quot;U: down&quot;<br />}</code></pre>
                     <p>And:</p>
                     <pre><code>order += &quot;ethernet usb0&quot;</code></pre>
                     <p>Restart i3 with <kbd><kbd>$MOD</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd></kbd> (preserves your layout/session).</p>
+                </article>
 
+                <article>
                     <h1>Use Netcfg to configure Android USB Tethering</h1>
                     <p>Create a file named <code>usb-tether</code> in <code>/etc/network.d/</code> and add a static ethernet configuration :</p>
                     <pre><code>CONNECTION='ethernet'<br />DESCRIPTION='A basic dhcp ethernet connection using iproute'<br />INTERFACE='usb0'<br />IP='dhcp'</code></pre>
                     <p>Connect to the profile with the following command:</p>
                     <pre><kbd># netcfg up usb-tether</kbd></pre>
+                </article>
 
+                <article>
                     <h1>Firefox: add "magnet:" protocol support</h1>
                     <p>Open a new tab and type <kbd>about:config</kbd></p>
                     <p>Right-click &rarr; New &rarr; Boolean &rarr; Name: network.protocol-handler.expose.magnet &rarr; Value &rarr; false</p>
                     <p>Next time you use the magnet protocol, it will give you the "associate application" box.</p>
                     <p>Point it to the magnet2torrent script below if you want to associate it with rtorrent.</p>
+                </article>
 
+                <article>
                     <h1>rtorrent: handling "magnet:" URIs via a bash script</h1>
                     <p>See: <a href="http://wiki.rtorrent.org/MagnetUri">http://wiki.rtorrentorg/MagnetUri</a></p>
                     <p>Create a <code>magnet2torrent</code> script with the following code:</p>
@@ -142,7 +168,9 @@
                     <pre><kbd>$ chmod a+x magnet2torrent</kbd></pre>
                     <p>Run the script with a magnet URI (after adding it to your $PATH variable):</p>
                     <pre><kbd>$ magnet2torrent "MAGNET_URI"</kbd></pre>
+                </article>
 
+                <article>
                     <h1>Connect to Raspberry Pi via VNC</h1>
                     <h2>Server side (Raspberry Pi running Raspbian)</h2>
                     <p>Install tightvnc:</p>
@@ -157,34 +185,46 @@
                     <pre><kbd># pacman -S tightvnc</kbd></pre>
                     <p>Connect to your Raspberry Pi with (adapt your ip address):</p>
                     <pre><kbd>$ vncviewer 192.168.1.4:1</kbd></pre>
+                </article>
 
+                <article>
                     <h1>Vim: convert highlights of the current syntax to HTML</h1>
                     <p>Execute:</p>
                     <pre><kbd>:runtime! syntax/2html.vim</kbd></pre>
                     <p>This will output a colored .html file</p>
+                </article>
 
+                <article>
                     <h1>Recursive chmod only files/directories</h1>
                     <p>Only files:</p>
                     <pre><kbd>$ find . -type f -exec chmod 644 {} \;</kbd></pre>
                     <p>Only directories:</p>
                     <pre><kbd>$ find . -type d -exec chmod 755 {} \;</kbd></pre>
                     <p>Note: adapt the command to your wishes</p>
+                </article>
 
+                <article>
                     <h1>Override an alias set in <code>.bashrc</code></h1>
                     <p>Add a <kbd>\</kbd> (backslash) before the command to disable the alias.</p>
                     <p>Example:</p>
                     <pre><kbd>$ \ls</kbd></pre>
-                    
+                </article>
+
+                <article>
                     <h1>Open programs with the terminal without being stuck to the terminal</h1>
                     <p>Lauch the command with &amp; at the end (backgroud).</p>
                     <p>Example:</p>
                     <pre><kbd>$ firefox &amp;</kbd></pre>
+                </article>
 
+                <article>
                     <h1>Wi-Fi connection frequently drops</h1>
                     <p>Create a <code>iwlwifi.conf</code> file in <code>/etc/modprobe.d/</code></p>
                     <p>containing the following line:</p>
                     <pre><code>options iwlwifi 11n_disable=1 swcrypto=1</code></pre>
+                </article>
 
+                <article>
                     <h1>Configure pacman</h1>
                     <h2>Auto-completion</h2>
                     <p>For advanced completion, install the bash-completion package:</p>
@@ -202,7 +242,9 @@
                     <pre><code># mv /usr/bin/pacman /usr/bin/pacman.bak</code></pre>
                     <p>Make a symlink from <code>pacman</code> to <code>pacman-color</code>:</p>
                     <pre><kbd># ln -s /usr/bin/pacman-color /usr/bin/pacman</kbd></pre>
+                </article>
 
+                <article>
                     <h1>Syslinux: change bootup resolution</h1>
                     <p>To know which resolutions are supported by your screen, install hwinfo:</p>
                     <pre><code># pacman -S hwinfo</code></pre>
@@ -213,14 +255,18 @@
                     <pre><code>vga=&lt;resolution&gt;</code></pre>
                     <p>where &lt;resolution&gt; is the corresponding hexa code.</p>
                     <p>For example: add <code>vga=0x037f</code> if you want 1920x1080x24.</p>
+                </article>
 
+                <article>
                     <h1>Configure i3bar and VPN pid</h1>
                     <p>In this case, I use the privatvpn script, which install the OpenVPN client.</p>
                     <p>Replace the command line in <code>/usr/bin/privatvpn</code> with:</p>
                     <pre><code>/usr/sbin/openvpn --config /etc/openvpn/privatvpn.conf --writepid /var/run/openvpn.pid</code></pre>
                     <p>Then point the .pid file in <code>~/.i3status.conf</code>, in <code>run_watch VPN</code>:</p>
                     <pre><code>pidfile = "/var/run/openvpn.pid"</code></pre>
+                </article>
 
+                <article>
                     <h1>Configure NTP</h1>
                     <p>Install ntp:</p>
                     <pre><code># pacman -S ntp</code></pre>
@@ -228,11 +274,15 @@
                     <pre><code>server 0.be.pool.ntp.org iburst<br />server 1.be.pool.ntp.org iburst<br />server 2.be.pool.ntp.org iburst<br />server 3.be.pool.ntp.org iburst</code></pre>
                     <p>Enable ntpd at startup:</p>
                     <pre><code># systemctl enable ntpd</code></pre>
+                </article>
 
+                <article>
                     <h1>Properly remove DHCP lease file upon disconnection</h1>
                     <p>Add the following line to <code>/etc/profile</code>:</p>
                     <pre><code>PRE_UP=' [ -e /var/lib/dhcpcd/dhcpcd-wlan0.lease ] &amp;&amp; rm /var/lib/dhcpcd/dhcpcd-wlan0.lease '</code></pre>
+                </article>
 
+                <article>
                     <h1>Configure Virtualbox</h1>
                     <p>Install it with:</p>
                     <pre><kbd># pacman -S virtualbox qt</kbd></pre>
@@ -240,7 +290,9 @@
                     <pre><kbd># gpasswd -a bp vboxusers</kbd></pre>
                     <p>Load kernel module at boot:</p>
                     <pre><kbd># tee /etc/modules-load.d/virtualbox.conf &lt;&lt;&lt; "vboxdrv"</kbd></pre>
+                </article>
 
+                <article>
                     <h1>Configure sudo</h1>
                     <p>Install with:</p>
                     <pre><kbd># pacman -S sudo</kbd></pre>
@@ -250,46 +302,60 @@
                     <h2>Use Vim as default editor for visudo</h2>
                     <p>Add the following lines to <code>/etc/sudoers</code>:</p>
                     <pre><code># Reset environment by default<br />Defaults      env_reset<br /># Set default EDITOR to vim, and do not allow visudo to use EDITOR/VISUAL.<br />Defaults      editor="/usr/bin/vim -p -X", !env_editor</code></pre>
+                </article>
 
+                <article>
                     <h1>Use feh as a desktop wallpaper manager</h1>
                     <pre><kbd>$ feh --bg-max image.png</kbd></pre>
                     <p>This creates a <code>.fehbg</code> file in <code>$HOME</code>.</p>
                     <p>To restore the background on the next session, add the following line to the startup file (<code>~/.xinitrc</code>):</p>
                     <pre><code>eval $(cat ~/.fehbg) &amp;</code></pre>
+                </article>
 
+                <article>
                     <h1>Configure XTerm colors/font</h1>
                     <p>Create a <code>.Xresources</code> file in your <code>$HOME</code> and add the following lines:</p>
                     <pre><code>XTerm*background: #111111<br />XTerm*foreground: gray90<br />XTerm*faceName: terminus10</code></pre>
+                </article>
 
+                <article>
                     <h1>Configure i3</h1>
                     <p>Install dmenu to use <kbd><kbd>$mod</kbd> + <kbd>D</kbd></kbd> (dmenu):</p>
                     <pre><kbd># pacman -S dmenu</kbd></pre>
+                </article>
 
+                <article>
                     <h1>Configure SLiM</h1>
                     <p>Edit <code>/etc/slim.conf</code>.</p>
+                </article>
 
+                <article>
                     <h1>Mount an USB external hard drive disk (/dev/sdb1)</h1>
                     <pre><kbd># mkdir /media/USBdisk<br /># mount /dev/sdb1 /media/USBdisk</kbd></pre>
-                    
+                </article>
+
+                <article>
                     <h1>Disable system beep (by blacklisting pcspkr module)</h1>
                     <p>Create a <code>nobeep.conf</code> file in <code>/etc/modprobe.d/</code> and add the following line (one per module):</p>
                     <pre><code>blacklist pcspkr</code></pre>
+                </article>
 
+                <article>
                     <h1>Belgian keyboard in X11</h1>
                     <p>Create a <code>10-keyboard.conf</code> file in <code>/etc/X11/xorg.conf.d/</code> and add the following lines:</p>
                     <pre><code>Section "InputClass"<br />    Identifier          "Keyboard Defaults"<br />    MatchIsKeyboard     "yes"<br />    Option              "XkbLayout" "be(azerty)"<br />EndSection</code></pre>
                 </article>
-
-                <aside>
-                    <h1>About Archlinux</h1>
-                    <p>I became an Arch user in december 2012 when I installed it on my laptop (Clevo W251HSQ). I was coming from Ubuntu and Debian and I now must say I really like the lightness and the level of customization of Archlinux.<p>
-
-                    <h1>Useful links</h1>
-                    <ul>
-                        <li><a href="https://wiki.archlinux.org/">ArchWiki</a></li>
-                    </ul>
-                </aside>
             </section>
+
+            <aside>
+                <h1>About Archlinux</h1>
+                <p>I became an Arch user in december 2012 when I installed it on my laptop (Clevo W251HSQ). I was coming from Ubuntu and Debian and I now must say I really like the lightness and the level of customization of Archlinux.<p>
+
+                <h1>Useful links</h1>
+                <ul>
+                    <li><a href="https://wiki.archlinux.org/">ArchWiki</a></li>
+                </ul>
+            </aside>
 
             <footer>
                 <p><!--[if lte IE 8]><span style="filter: FlipH; -ms-filter: "FlipH"; display: inline-block;"><![endif]-->
