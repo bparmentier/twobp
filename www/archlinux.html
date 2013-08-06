@@ -28,6 +28,7 @@
             <section>
                 <article>
                     <h1>Garmin Forerunner 410 and Archlinux</h1>
+                    <time datetime="2013-07-27">27 July 2013</time>
                     <p>Install <code>pyusb10</code> from AUR:</p>
                     <pre><kbd>$ yaourt -S pyusb10</kbd></pre>
                     <p>Install <code>pip2</code>:</p>
@@ -43,6 +44,7 @@
 
                 <article>
                     <h1>Switch keyboard to bépo</h1>
+                    <time datetime="2013-07-13">13 July 2013</time>
                     <p>I decided to learn the french bépo keyboard layout. Since I still write in azerty, I prefere not to make this new layout definitive.</p>
                     <p>To switch to bépo in X11, type the following command:</p>
                     <pre><kbd>$ setxkbmap fr bepo</kbd></pre>
@@ -50,6 +52,7 @@
 
                 <article>
                     <h1>i3: force specific windows as always floating</h1>
+                    <time datetime="2013-04-28">28 April 2013</time>
                     <p>Sometimes you don't want i3 to open a window in tiling mode. This is generally the case for popups or preference windows, like the one in Firefox (version 20).<br />
                     While most of them are correctly handled by i3, some programs don't set the right window type on those windows.</p>
                     <p>A way to fix it is to add a rule like this in your <code>~/.i3/config</code> file:</p>
@@ -61,12 +64,14 @@
 
                 <article>
                     <h1>Configure Vimperator</h1>
+                    <time datetime="2013-04-17">17 April 2013</time>
                     <p>Set default search engine:</p>
                     <pre><kbd>:set defsearch=duckduckgo</kbd></pre>
                 </article>
 
                 <article>
                     <h1>Bash: useful shortcuts</h1>
+                    <time datetime="2013-04-15">15 April 2013</time>
                     <ul>
                         <li><kbd>Ctrl + A</kbd>: moves cursor to beginning of line of text.</li>
                         <li><kbd>Ctrl + E</kbd>: moves cursor to end of line of text.</li>
@@ -76,6 +81,7 @@
 
                 <article>
                     <h1>Use webcam</h1>
+                    <time datetime="2013-04-11">11 April 2013</time>
                     <p>Add yourself to the <code>video</code> group:</p>
                     <pre><kbd># gpasswd -a &lt;user&gt; video</kbd></pre>
                     <p>To use it with mplayer type the following command:</p>
@@ -84,6 +90,7 @@
 
                 <article>
                     <h1>Multiple screens</h1>
+                    <time datetime="2013-03-21">21 March 2013</time>
                     <p>So, I have a laptop with a 1920*1080 screen and I want to connect to it a 1680*1050 LCD monitor through VGA.</p>
                     <p>First make sure xorg-xrandr is installed:</p>
                     <pre><kbd>$ sudo pacman -S xorg-xrandr</kbd></pre>
@@ -95,6 +102,7 @@
 
                 <article>
                     <h1>Arduino Uno installation</h1>
+                    <time datetime="2013-03-15">15 March 2013</time>
                     <p>First install the <code>arduino</code> package from the AUR:</p>
                     <pre><kbd>$ sudo yaourt -S arduino</kbd></pre>
                     <p>Add yourself to the <code>uucp</code> group:</p>
@@ -116,6 +124,7 @@
 
                 <article>
                     <h1>Vim: export document to PDF</h1>
+                    <time datetime="2013-03-07">7 March 2013</time>
                     <p>If you want your syntax highlight to be exported, don't forget to activate it with:</p>
                     <pre><kbd>:syntax on</kbd></pre>
                     <p>Now print your document to PostScript:</p>
@@ -126,6 +135,7 @@
 
                 <article>
                     <h1>Optimize SSD Performance</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>See: <a href="https://wiki.archlinux.org/index.php/Solid_State_Drives">https://wiki.archlinux.org/index.php/Solid_State_Drives</a>
                     <h2>Enable TRIM</h2>
                     <p><strong>Warning</strong>: the following tip only works for Linux kernel version 2.6.33 or above, and not all filesystems are supported (as of version 3.7, ext4, btrfs, JFS and XFS support it).</p>
@@ -136,6 +146,7 @@
 
                 <article>
                     <h1>i3: add a field for your usb-tether profile</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>Add the following lines in your <code>~/.i3status.conf</code>:</p>
                     <pre><code>ethernet usb0 {<br />        format_up = &quot;U: %ip&quot;<br />        format_down = &quot;U: down&quot;<br />}</code></pre>
                     <p>And:</p>
@@ -145,6 +156,7 @@
 
                 <article>
                     <h1>Use Netcfg to configure Android USB Tethering</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>Create a file named <code>usb-tether</code> in <code>/etc/network.d/</code> and add a static ethernet configuration :</p>
                     <pre><code>CONNECTION='ethernet'<br />DESCRIPTION='A basic dhcp ethernet connection using iproute'<br />INTERFACE='usb0'<br />IP='dhcp'</code></pre>
                     <p>Connect to the profile with the following command:</p>
@@ -153,6 +165,7 @@
 
                 <article>
                     <h1>Firefox: add "magnet:" protocol support</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>Open a new tab and type <kbd>about:config</kbd></p>
                     <p>Right-click &rarr; New &rarr; Boolean &rarr; Name: network.protocol-handler.expose.magnet &rarr; Value &rarr; false</p>
                     <p>Next time you use the magnet protocol, it will give you the "associate application" box.</p>
@@ -161,6 +174,7 @@
 
                 <article>
                     <h1>rtorrent: handling "magnet:" URIs via a bash script</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>See: <a href="http://wiki.rtorrent.org/MagnetUri">http://wiki.rtorrentorg/MagnetUri</a></p>
                     <p>Create a <code>magnet2torrent</code> script with the following code:</p>
                     <pre><code>#! /bin/bash<br /><br /># Convert a magnet URI into a .torrent file<br /># Run the script with:<br /># ./magnet2torrent.sh &quot;MAGNET_URI&quot;<br /># (Don't forget the quotes aroud MAGNET_URI)<br /><br />cd ~/watch || exit    # set your watch directory here<br />[[ &quot;$1&quot; =~ xt=urn:btih:([^&amp;/]+) ]] || exit<br />hashh=${BASH_REMATCH[1]}<br />if [[ &quot;$1&quot; =~ dn=([^&amp;/]+) ]];then<br />    filename=${BASH_REMATCH[1]}<br />else<br />    filename=$hashh<br />fi<br />echo &quot;d10:magnet-uri${#1}:${1}e&quot; &gt; &quot;meta-$filename.torrent&quot;</code></pre>
@@ -172,6 +186,7 @@
 
                 <article>
                     <h1>Connect to Raspberry Pi via VNC</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <h2>Server side (Raspberry Pi running Raspbian)</h2>
                     <p>Install tightvnc:</p>
                     <pre><kbd>$ sudo apt-get install tightvncserver</kbd></pre>
@@ -189,6 +204,7 @@
 
                 <article>
                     <h1>Vim: convert highlights of the current syntax to HTML</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>Execute:</p>
                     <pre><kbd>:runtime! syntax/2html.vim</kbd></pre>
                     <p>This will output a colored .html file</p>
@@ -196,6 +212,7 @@
 
                 <article>
                     <h1>Recursive chmod only files/directories</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>Only files:</p>
                     <pre><kbd>$ find . -type f -exec chmod 644 {} \;</kbd></pre>
                     <p>Only directories:</p>
@@ -205,6 +222,7 @@
 
                 <article>
                     <h1>Override an alias set in <code>.bashrc</code></h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>Add a <kbd>\</kbd> (backslash) before the command to disable the alias.</p>
                     <p>Example:</p>
                     <pre><kbd>$ \ls</kbd></pre>
@@ -212,6 +230,7 @@
 
                 <article>
                     <h1>Open programs with the terminal without being stuck to the terminal</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>Lauch the command with &amp; at the end (backgroud).</p>
                     <p>Example:</p>
                     <pre><kbd>$ firefox &amp;</kbd></pre>
@@ -219,6 +238,7 @@
 
                 <article>
                     <h1>Wi-Fi connection frequently drops</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>Create a <code>iwlwifi.conf</code> file in <code>/etc/modprobe.d/</code></p>
                     <p>containing the following line:</p>
                     <pre><code>options iwlwifi 11n_disable=1 swcrypto=1</code></pre>
@@ -226,6 +246,7 @@
 
                 <article>
                     <h1>Configure pacman</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <h2>Auto-completion</h2>
                     <p>For advanced completion, install the bash-completion package:</p>
                     <pre><code># pacman -S bash-completion</code></pre>
@@ -246,6 +267,7 @@
 
                 <article>
                     <h1>Syslinux: change bootup resolution</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>To know which resolutions are supported by your screen, install hwinfo:</p>
                     <pre><code># pacman -S hwinfo</code></pre>
                     <p>Then execute:</p>
@@ -259,6 +281,7 @@
 
                 <article>
                     <h1>Configure i3bar and VPN pid</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>In this case, I use the privatvpn script, which install the OpenVPN client.</p>
                     <p>Replace the command line in <code>/usr/bin/privatvpn</code> with:</p>
                     <pre><code>/usr/sbin/openvpn --config /etc/openvpn/privatvpn.conf --writepid /var/run/openvpn.pid</code></pre>
@@ -268,6 +291,7 @@
 
                 <article>
                     <h1>Configure NTP</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>Install ntp:</p>
                     <pre><code># pacman -S ntp</code></pre>
                     <p>Add the following lines in <code>/etc/ntp.conf</code>:</p>
@@ -278,12 +302,14 @@
 
                 <article>
                     <h1>Properly remove DHCP lease file upon disconnection</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>Add the following line to <code>/etc/profile</code>:</p>
                     <pre><code>PRE_UP=' [ -e /var/lib/dhcpcd/dhcpcd-wlan0.lease ] &amp;&amp; rm /var/lib/dhcpcd/dhcpcd-wlan0.lease '</code></pre>
                 </article>
 
                 <article>
                     <h1>Configure Virtualbox</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>Install it with:</p>
                     <pre><kbd># pacman -S virtualbox qt</kbd></pre>
                     <p>Add user bp to the <code>vboxusers</code> group:</p>
@@ -294,6 +320,7 @@
 
                 <article>
                     <h1>Configure sudo</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>Install with:</p>
                     <pre><kbd># pacman -S sudo</kbd></pre>
                     <h2>Allow user <code>bp</code> to use sudo</h2>
@@ -306,6 +333,7 @@
 
                 <article>
                     <h1>Use feh as a desktop wallpaper manager</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <pre><kbd>$ feh --bg-max image.png</kbd></pre>
                     <p>This creates a <code>.fehbg</code> file in <code>$HOME</code>.</p>
                     <p>To restore the background on the next session, add the following line to the startup file (<code>~/.xinitrc</code>):</p>
@@ -314,34 +342,40 @@
 
                 <article>
                     <h1>Configure XTerm colors/font</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>Create a <code>.Xresources</code> file in your <code>$HOME</code> and add the following lines:</p>
                     <pre><code>XTerm*background: #111111<br />XTerm*foreground: gray90<br />XTerm*faceName: terminus10</code></pre>
                 </article>
 
                 <article>
                     <h1>Configure i3</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>Install dmenu to use <kbd><kbd>$mod</kbd> + <kbd>D</kbd></kbd> (dmenu):</p>
                     <pre><kbd># pacman -S dmenu</kbd></pre>
                 </article>
 
                 <article>
                     <h1>Configure SLiM</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>Edit <code>/etc/slim.conf</code>.</p>
                 </article>
 
                 <article>
                     <h1>Mount an USB external hard drive disk (/dev/sdb1)</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <pre><kbd># mkdir /media/USBdisk<br /># mount /dev/sdb1 /media/USBdisk</kbd></pre>
                 </article>
 
                 <article>
                     <h1>Disable system beep (by blacklisting pcspkr module)</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>Create a <code>nobeep.conf</code> file in <code>/etc/modprobe.d/</code> and add the following line (one per module):</p>
                     <pre><code>blacklist pcspkr</code></pre>
                 </article>
 
                 <article>
                     <h1>Belgian keyboard in X11</h1>
+                    <time datetime="2013-01">January 2013</time>
                     <p>Create a <code>10-keyboard.conf</code> file in <code>/etc/X11/xorg.conf.d/</code> and add the following lines:</p>
                     <pre><code>Section "InputClass"<br />    Identifier          "Keyboard Defaults"<br />    MatchIsKeyboard     "yes"<br />    Option              "XkbLayout" "be(azerty)"<br />EndSection</code></pre>
                 </article>
