@@ -33,7 +33,7 @@ body {
 #main_wrapper {
     width: 90%;
     min-width: 700px;
-    max-width: 1000px;
+    max-width: 1080px;
     margin: auto;
     background-color: #e8e8e8;
     box-shadow: 3px 3px 6px grey;
@@ -60,12 +60,12 @@ nav ul {
     list-style-type: none;
     margin: 0 0;
     padding: 0 0 0 0;
-    height: 40px;
 }
 
 nav li {
     display: inline-block;
-    margin: 0 0;
+    height: 40px;
+    margin: 0;
 }
 
 nav li a, nav li a:visited {
@@ -118,9 +118,6 @@ section, aside {
     vertical-align: top;
 }
 
-article {
-}
-
 /* Sidebar */
 
 aside {
@@ -160,7 +157,8 @@ a:hover {
     text-decoration: none;
 }
 
-pre {
+article pre {
+    width: 100%;
     border: 1px solid #c8c8c8;
     background-color: #d8d8d8;
     padding: 4px;
@@ -172,15 +170,75 @@ code {
 }
 
 /* Mobile devices */
-/*
-#main_wrapper {
-    width: 100%;
-    background-color: #e8e8e8;
-    box-shadow: 0 0 0;
-}
 
-aside {
-    margin: 0;
-    box-shadow: none;
+@media (max-device-width: 800px) {
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #main_wrapper {
+        width: 100%;
+        min-width: 320px;
+        max-width: 1080px;
+        margin: 0;
+        background-color: #e8e8e8;
+        box-shadow: none;
+    }
+
+    header {
+        display: block;
+    }
+
+    header h1 {
+        margin-top: 0px;
+    }
+
+    nav ul {
+        height: 260px;
+    }
+
+    nav li {
+        display: block;
+    }
+
+    nav li a:hover {
+        background-color: #383838;
+        color: #e8e8e8;
+    }
+
+    nav li a:active, #home #nav-home, #android #nav-android, #archlinux #nav-archlinux, #web #nav-web, #projects #nav-projects, #contact #nav-contact {
+        background-color: #e8e8e8;
+        color: #383838;
+    }
+
+    section, aside {
+        display: block;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    article {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    article pre {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        white-space: normal;
+    }
+
+    aside {
+        margin: 0;
+        text-align: left;
+        box-shadow: none;
+    }
+
+    aside h1, aside p {
+        margin-left: 10px;
+    }
 }
-*/
