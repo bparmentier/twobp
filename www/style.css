@@ -241,4 +241,8 @@ code {
     aside h1, aside p {
         margin-left: 10px;
     }
+
+    code {
+        white-space: normal;
+    }
 }
