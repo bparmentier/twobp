@@ -169,6 +169,16 @@ code {
     white-space: nowrap;
 }
 
+.copyleft {
+    display: inline-block;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
 /* Mobile devices */
 
 @media (max-device-width: 800px) {
