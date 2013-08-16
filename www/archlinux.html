@@ -28,7 +28,7 @@
             </header>
 
             <section>
-                <article>
+                <article id="garmin-forerunner-410">
                     <h1>Garmin Forerunner 410</h1>
                     <time datetime="2013-07-27">27 July 2013</time>
                     <p>Install <code>pyusb10</code> from AUR:</p>
@@ -44,7 +44,7 @@
                     <p>Now you can set your preferences (like your Garmin Connect login and password) in <code>~/.antd/antd.cfg</code>.</p>
                 </article>
 
-                <article>
+                <article id="switch-keyboard-bepo">
                     <h1>Switch keyboard to bépo</h1>
                     <time datetime="2013-07-13">13 July 2013</time>
                     <p>I decided to learn the french bépo keyboard layout. Since I still write in azerty, I prefer not to make this new layout definitive.</p>
@@ -52,7 +52,7 @@
                     <pre><kbd>$ setxkbmap fr bepo</kbd></pre>
                 </article>
 
-                <article>
+                <article id="i3-force-specific-windows-as-always-floating">
                     <h1>i3: force specific windows as always floating</h1>
                     <time datetime="2013-04-28">28 April 2013</time>
                     <p>Sometimes you don't want i3 to open a window in tiling mode. This is generally the case for popups or preference windows, like the one in Firefox (version 20).<br />
@@ -64,14 +64,14 @@
                     <p>Look at the <code>WM_CLASS(STRING) = "Browser", "Firefox"</code>. The first one is the instance and the second one is the class.</p>
                 </article>
 
-                <article>
+                <article id="configure-vimperator">
                     <h1>Configure Vimperator</h1>
                     <time datetime="2013-04-17">17 April 2013</time>
                     <p>Set default search engine:</p>
                     <pre><kbd>:set defsearch=duckduckgo</kbd></pre>
                 </article>
 
-                <article>
+                <article id="bash-useful-shortcuts">
                     <h1>Bash: useful shortcuts</h1>
                     <time datetime="2013-04-15">15 April 2013</time>
                     <ul>
@@ -81,7 +81,7 @@
                     </ul>
                 </article>
 
-                <article>
+                <article id="use-webcam">
                     <h1>Use webcam</h1>
                     <time datetime="2013-04-11">11 April 2013</time>
                     <p>Add yourself to the <code>video</code> group:</p>
@@ -90,7 +90,7 @@
                     <pre><kbd>$ mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 15</kbd></pre>
                 </article>
 
-                <article>
+                <article id="multiple-screens">
                     <h1>Multiple screens</h1>
                     <time datetime="2013-03-21">21 March 2013</time>
                     <p>So, I have a laptop with a 1920*1080 screen and I want to connect to it a 1680*1050 LCD monitor through VGA.</p>
@@ -102,7 +102,7 @@
                     <pre><kbd>$ xrandr --output LVDS1 --pos 0x0 --mode 1920x1080 --output VGA1 --mode 1680x1050 --left-of LVDS1</kbd></pre>
                 </article>
 
-                <article>
+                <article id="arduino-uno-installation">
                     <h1>Arduino Uno installation</h1>
                     <time datetime="2013-03-15">15 March 2013</time>
                     <p>First install the <code>arduino</code> package from the AUR:</p>
@@ -124,7 +124,7 @@
                     <pre><kbd>$ sudo chmod 777 /etc/tmpfiles.d/legacy.conf</kbd></pre>
                 </article>
 
-                <article>
+                <article id="vim-export-document-pdf">
                     <h1>Vim: export document to PDF</h1>
                     <time datetime="2013-03-07">7 March 2013</time>
                     <p>If you want your syntax highlight to be exported, don't forget to activate it with:</p>
@@ -135,7 +135,7 @@
                     <pre><kbd>$ ps2pdf mydocument.ps</kbd></pre>
                 </article>
 
-                <article>
+                <article id="optimize-ssd-performance">
                     <h1>Optimize SSD Performance</h1>
                     <time datetime="2013-01">January 2013</time>
                     <p>See: <a href="https://wiki.archlinux.org/index.php/Solid_State_Drives">https://wiki.archlinux.org/index.php/Solid_State_Drives</a>
@@ -146,7 +146,7 @@
                     <pre><code>/dev/sda1  /       ext4   defaults,noatime,<em>discard</em>   0  1<br />/dev/sda2  /home   ext4   defaults,noatime,<em>discard</em>   0  2</code></pre>
                 </article>
 
-                <article>
+                <article id="i3-add-field-usb-tether-profile">
                     <h1>i3: add a field for your usb-tether profile</h1>
                     <time datetime="2013-01">January 2013</time>
                     <p>Add the following lines in your <code>~/.i3status.conf</code>:</p>
@@ -156,7 +156,7 @@
                     <p>Restart i3 with <kbd><kbd>$MOD</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd></kbd> (preserves your layout/session).</p>
                 </article>
 
-                <article>
+                <article id="use-netcfg-configure-android-usb-tethering">
                     <h1>Use Netcfg to configure Android USB Tethering</h1>
                     <time datetime="2013-01">January 2013</time>
                     <p>Create a file named <code>usb-tether</code> in <code>/etc/network.d/</code> and add a static ethernet configuration :</p>
@@ -165,7 +165,7 @@
                     <pre><kbd># netcfg up usb-tether</kbd></pre>
                 </article>
 
-                <article>
+                <article id="firefox-add-magnet-protocol-support">
                     <h1>Firefox: add "magnet:" protocol support</h1>
                     <time datetime="2013-01">January 2013</time>
                     <p>Open a new tab and type <kbd>about:config</kbd></p>
@@ -174,7 +174,7 @@
                     <p>Point it to the magnet2torrent script below if you want to associate it with rtorrent.</p>
                 </article>
 
-                <article>
+                <article id="rtorrent-handling-magnet-uris-via-bash-scripts">
                     <h1>rtorrent: handling "magnet:" URIs via a bash script</h1>
                     <time datetime="2013-01">January 2013</time>
                     <p>See: <a href="http://wiki.rtorrent.org/MagnetUri">http://wiki.rtorrentorg/MagnetUri</a></p>
@@ -186,7 +186,7 @@
                     <pre><kbd>$ magnet2torrent "MAGNET_URI"</kbd></pre>
                 </article>
 
-                <article>
+                <article id="connect-raspberry-pi-via-vnc">
                     <h1>Connect to Raspberry Pi via VNC</h1>
                     <time datetime="2013-01">January 2013</time>
                     <h2>Server side (Raspberry Pi running Raspbian)</h2>
@@ -204,7 +204,7 @@
                     <pre><kbd>$ vncviewer 192.168.1.4:1</kbd></pre>
                 </article>
 
-                <article>
+                <article id="vim-convert-highlights-current-syntax-html">
                     <h1>Vim: convert highlights of the current syntax to HTML</h1>
                     <time datetime="2013-01">January 2013</time>
                     <p>Execute:</p>
@@ -212,7 +212,7 @@
                     <p>This will output a colored .html file</p>
                 </article>
 
-                <article>
+                <article id="recursive-chmod-only-files-directories">
                     <h1>Recursive chmod only files/directories</h1>
                     <time datetime="2013-01">January 2013</time>
                     <p>Only files:</p>
@@ -222,7 +222,7 @@
                     <p>Note: adapt the command to your wishes</p>
                 </article>
 
-                <article>
+                <article id="override-alias-set-bashrc">
                     <h1>Override an alias set in <code>.bashrc</code></h1>
                     <time datetime="2013-01">January 2013</time>
                     <p>Add a <kbd>\</kbd> (backslash) before the command to disable the alias.</p>
@@ -230,7 +230,7 @@
                     <pre><kbd>$ \ls</kbd></pre>
                 </article>
 
-                <article>
+                <article id="open-programs-with-terminal-without-being-stuck-terminal">
                     <h1>Open programs with the terminal without being stuck to the terminal</h1>
                     <time datetime="2013-01">January 2013</time>
                     <p>Launch the command with &amp; at the end (background).</p>
@@ -238,7 +238,7 @@
                     <pre><kbd>$ firefox &amp;</kbd></pre>
                 </article>
 
-                <article>
+                <article id="wifi-connection-frequently-drops">
                     <h1>Wi-Fi connection frequently drops</h1>
                     <time datetime="2013-01">January 2013</time>
                     <p>Create a <code>iwlwifi.conf</code> file in <code>/etc/modprobe.d/</code></p>
@@ -246,7 +246,7 @@
                     <pre><code>options iwlwifi 11n_disable=1 swcrypto=1</code></pre>
                 </article>
 
-                <article>
+                <article id="configure-pacman">
                     <h1>Configure pacman</h1>
                     <time datetime="2013-01">January 2013</time>
                     <h2>Auto-completion</h2>
@@ -267,7 +267,7 @@
                     <pre><kbd># ln -s /usr/bin/pacman-color /usr/bin/pacman</kbd></pre>
                 </article>
 
-                <article>
+                <article id="syslinux-change-bootup-resolution">
                     <h1>Syslinux: change bootup resolution</h1>
                     <time datetime="2013-01">January 2013</time>
                     <p>To know which resolutions are supported by your screen, install hwinfo:</p>
@@ -281,7 +281,7 @@
                     <p>For example: add <code>vga=0x037f</code> if you want 1920x1080x24.</p>
                 </article>
 
-                <article>
+                <article id="configure-i3bar-vpn-pid">
                     <h1>Configure i3bar and VPN pid</h1>
                     <time datetime="2013-01">January 2013</time>
                     <p>In this case, I use the privatvpn script, which install the OpenVPN client.</p>
@@ -291,7 +291,7 @@
                     <pre><code>pidfile = "/var/run/openvpn.pid"</code></pre>
                 </article>
 
-                <article>
+                <article id="configure-ntp">
                     <h1>Configure NTP</h1>
                     <time datetime="2013-01">January 2013</time>
                     <p>Install ntp:</p>
@@ -302,14 +302,14 @@
                     <pre><code># systemctl enable ntpd</code></pre>
                 </article>
 
-                <article>
+                <article id="properly-remove-dhcp-lease-file-upon-disconnection">
                     <h1>Properly remove DHCP lease file upon disconnection</h1>
                     <time datetime="2013-01">January 2013</time>
                     <p>Add the following line to <code>/etc/profile</code>:</p>
                     <pre><code>PRE_UP=' [ -e /var/lib/dhcpcd/dhcpcd-wlan0.lease ] &amp;&amp; rm /var/lib/dhcpcd/dhcpcd-wlan0.lease '</code></pre>
                 </article>
 
-                <article>
+                <article id="configure-virtualbox">
                     <h1>Configure Virtualbox</h1>
                     <time datetime="2013-01">January 2013</time>
                     <p>Install it with:</p>
@@ -320,7 +320,7 @@
                     <pre><kbd># tee /etc/modules-load.d/virtualbox.conf &lt;&lt;&lt; "vboxdrv"</kbd></pre>
                 </article>
 
-                <article>
+                <article id="configure-sudo">
                     <h1>Configure sudo</h1>
                     <time datetime="2013-01">January 2013</time>
                     <p>Install with:</p>
@@ -333,7 +333,7 @@
                     <pre><code># Reset environment by default<br />Defaults      env_reset<br /># Set default EDITOR to vim, and do not allow visudo to use EDITOR/VISUAL.<br />Defaults      editor="/usr/bin/vim -p -X", !env_editor</code></pre>
                 </article>
 
-                <article>
+                <article id="use-feh-as-desktop-wallpaper-manager">
                     <h1>Use feh as a desktop wallpaper manager</h1>
                     <time datetime="2013-01">January 2013</time>
                     <pre><kbd>$ feh --bg-max image.png</kbd></pre>
@@ -342,28 +342,28 @@
                     <pre><code>eval $(cat ~/.fehbg) &amp;</code></pre>
                 </article>
 
-                <article>
+                <article id="configure-xterm-colors-font">
                     <h1>Configure XTerm colors/font</h1>
                     <time datetime="2013-01">January 2013</time>
                     <p>Create a <code>.Xresources</code> file in your <code>$HOME</code> and add the following lines:</p>
                     <pre><code>XTerm*background: #111111<br />XTerm*foreground: gray90<br />XTerm*faceName: terminus10</code></pre>
                 </article>
 
-                <article>
+                <article id="configure-i3">
                     <h1>Configure i3</h1>
                     <time datetime="2013-01">January 2013</time>
                     <p>Install dmenu to use <kbd><kbd>$mod</kbd> + <kbd>D</kbd></kbd> (dmenu):</p>
                     <pre><kbd># pacman -S dmenu</kbd></pre>
                 </article>
 
-                <article>
+                <article id="disable-system-beep-by-blacklisting-pcspkr-module">
                     <h1>Disable system beep (by blacklisting pcspkr module)</h1>
                     <time datetime="2013-01">January 2013</time>
                     <p>Create a <code>nobeep.conf</code> file in <code>/etc/modprobe.d/</code> and add the following line (one per module):</p>
                     <pre><code>blacklist pcspkr</code></pre>
                 </article>
 
-                <article>
+                <article id="belgian-keyboard-x11">
                     <h1>Belgian keyboard in X11</h1>
                     <time datetime="2013-01">January 2013</time>
                     <p>Create a <code>10-keyboard.conf</code> file in <code>/etc/X11/xorg.conf.d/</code> and add the following lines:</p>
