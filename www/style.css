@@ -179,7 +179,7 @@ pre code {
     white-space: pre;
 }
 
-#copyleft {
+.copyleft {
     display: inline-block;
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
