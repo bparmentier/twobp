@@ -146,6 +146,12 @@ footer {
     padding-bottom: 5px;
 }
 
+/* Error 404 specific */
+
+#page-not-found {
+    text-align: center;
+}
+
 /* Various */
 
 a {
