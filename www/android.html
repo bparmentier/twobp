@@ -31,10 +31,24 @@
                 <details>
                     <summary>Table of contents</summary>
                     <ul>
+                        <li><a href="#firefox-android-specify-default-search-engine">Firefox for Android: specify default search engine</a></li>
                         <li><a href="#connectbot-authenticate-with-ssh-key">ConnectBot: Authenticate with a SSH key</a></li>
                         <li><a href="#cm101-access-developer-mode-menu">CM10.1: Access the Developer Mode menu</a></li>
                     </ul>
                 </details>
+
+                <article id="firefox-android-specify-default-search-engine">
+                    <h1>Firefox for Android: specify default search engine</h1>
+                    <time datetime="2013-08-19">19 August 2013</time>
+                    <p>You can specify a default search engine other than Google in Firefox for Android. I'll take the <a href="https://addons.mozilla.org/android/user/duckduckgo/">DuckDuckGo</a> add-on as example:</p>
+                    <p>Once you have installed your add-on, write <code>about:config</code> in the address bar. There you can <code><kbd>Add a New Setting</kbd></code>:</p>
+                    <ul>
+                        <li>Select <code>String</code> as type;</li>
+                        <li>Enter <code><kbd>browser.search.defaultenginename</kbd></code> as name;</li>
+                        <li>Enter <code><kbd>DuckDuckGo</kbd></code> as value.</li>
+                    </ul>
+                    <p>Otherwise, you can also tap the menu button, go to <code>Tools</code>, <code>Add-ons</code>, select your Search Add-on and tap on <code>Set as Default</code>.</p>
+                </article>
 
                 <article id="connectbot-authenticate-with-ssh-key">
                     <h1>ConnectBot: Authenticate with a SSH key</h1>
