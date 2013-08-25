@@ -35,6 +35,7 @@
                 <details>
                     <summary>Table of contents</summary>
                     <ul>
+                        <li><a href="#use-netctl-configure-android-usb-tethering">Use Netctl to configure Android USB Tethering</a></li>
                         <li><a href="#garmin-forerunner-410">Garmin Forerunner 410</a></li>
                         <li><a href="#switch-keyboard-bepo">Switch keyboard to bépo</a></li>
                         <li><a href="#i3-force-specific-windows-as-always-floating">i3: force specific windows as always floating</a></li>
@@ -46,7 +47,6 @@
                         <li><a href="#vim-export-document-pdf">Vim: export document to PDF</a></li>
                         <li><a href="#optimize-ssd-performance">Optimize SSD Performance</a></li>
                         <li><a href="#i3-add-field-usb-tether-profile">i3: add a field for your usb-tether profile</a></li>
-                        <li><a href="#use-netcfg-configure-android-usb-tethering">Use Netcfg to configure Android USB Tethering</a></li>
                         <li><a href="#firefox-add-magnet-protocol-support">Firefox: add "magnet:" protocol support</a></li>
                         <li><a href="#rtorrent-handling-magnet-uris-via-bash-scripts">rtorrent: handling "magnet:" URIs via a bash script</a></li>
                         <li><a href="#connect-raspberry-pi-via-vnc">Connect to Raspberry Pi via VNC</a></li>
@@ -69,6 +69,17 @@
                         <li><a href="#belgian-keyboard-x11">Belgian keyboard in X11</a></li>
                     </ul>
                 </details>
+
+                <article id="use-netctl-configure-android-usb-tethering">
+                    <h1>Use Netctl to configure Android USB Tethering</h1>
+                    <time datetime="2013-08-25">25 August 2013</time>
+                    <p>Create a file named <code>usb-tether</code> in <code>/etc/netctl/</code> and add the following configuration :</p>
+                    <pre><code>Description='A basic dhcp ethernet connection'<br />Interface=usb0<br />Connection=ethernet<br />IP=dhcp</code></pre>
+                    <p>Start the profile with:</p>
+                    <pre><kbd># netctl start usb-tether</kbd></pre>
+                    <p>Or enable it with:</p>
+                    <pre><kbd># netctl enable usb-tether</kbd></pre>
+                </article>
 
                 <article id="garmin-forerunner-410">
                     <h1>Garmin Forerunner 410</h1>
@@ -196,15 +207,6 @@
                     <p>And:</p>
                     <pre><code>order += &quot;ethernet usb0&quot;</code></pre>
                     <p>Restart i3 with <kbd><kbd>$MOD</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd></kbd> (preserves your layout/session).</p>
-                </article>
-
-                <article id="use-netcfg-configure-android-usb-tethering">
-                    <h1>Use Netcfg to configure Android USB Tethering</h1>
-                    <time datetime="2013-01">January 2013</time>
-                    <p>Create a file named <code>usb-tether</code> in <code>/etc/network.d/</code> and add a static ethernet configuration :</p>
-                    <pre><code>CONNECTION='ethernet'<br />DESCRIPTION='A basic dhcp ethernet connection using iproute'<br />INTERFACE='usb0'<br />IP='dhcp'</code></pre>
-                    <p>Connect to the profile with the following command:</p>
-                    <pre><kbd># netcfg up usb-tether</kbd></pre>
                 </article>
 
                 <article id="firefox-add-magnet-protocol-support">
