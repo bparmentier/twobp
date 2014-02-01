@@ -35,12 +35,30 @@
                 <details>
                     <summary>Table of contents</summary>
                     <ul>
+                        <li><a href="#create-a-self-signed-certificate-in-one-line">Create a self-signed certificate in one line</a></li>
                         <li><a href="#firefox-edit-cookies-from-the-developer-toolbar">Firefox: edit cookies from the Developer Toolbar</a></li>
                         <li><a href="#copyleft-symbol">Copyleft symbol</a></li>
                         <li><a href="#remove-space-between-two-inline-block-elements">Remove the space between two inline-block elements</a></li>
                     </ul>
                 </details>
 
+                <article id="create-a-self-signed-certificate-in-one-line">
+                    <h1>Create a self-signed certificate in one line</h1>
+                    <time datetime="2013-11-17">1 February 2014</time>
+                    <pre><code>$ openssl req -nodes -x509 -newkey rsa:4096 -sha512 -days 365 -keyout cert.key -out cert.pem</code></pre>
+                    <p>Let's analyze this command:<br />
+                        <ul>
+                            <li><code>req</code>: request a new PKCS#10 certificate;</li>
+                            <li><code>-nodes</code>: do not encrypt the private key (no password);</li>
+                            <li><code>-x509</code>: output a self-signed certificate instead of a certificate request;</li>
+                            <li><code>-newkey rsa:4096</code>: create a new certificate request and a new 4096 bits RSA key;</li>
+                            <li><code>-sha512</code>: sign the request with a SHA-512 message digest;</li>
+                            <li><code>-days 365</code>: the certificate will be valid for 365 days;</li>
+                            <li><code>-keyout cert.key</code>: private key filename;</li>
+                            <li><code>-out cert.pem</code>: output filename.</li>
+                        </ul>
+                    </p>
+                </article>
                 <article id="firefox-edit-cookies-from-the-developer-toolbar">
                     <h1>Firefox: edit cookies from the Developer Toolbar</h1>
                     <time datetime="2013-11-17">17 November 2013</time>
