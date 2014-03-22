@@ -190,6 +190,22 @@ pre code {
     transform: scaleX(-1);
 }
 
+#bitcoin-donate-button {
+    background-color: #989898;
+    padding: 0;
+    border-radius: 2px;
+    text-decoration: none;
+}
+
+#bitcoin-donate-button a {
+    color: #eee;
+    margin: 1em;
+}
+
+#bitcoin-logo {
+    display: block;
+}
+
 /* Mobile devices */
 
 @media (max-device-width: 800px) {
